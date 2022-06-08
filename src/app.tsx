@@ -1,11 +1,20 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { ProductsContextProvider, useProductsContext } from "./context/ProductContext"
 import "./index.css"
+import Products from "./pages/ProductsPage"
 
-const App = () => (
-    <div className="w-full h-full flex justify-center items-center">
-        <h1>Hello There!</h1>
-    </div>
+const App = () => {
+    return (
+        <div className="app">
+            <Products />
+        </div>
+    )
+}
+
+ReactDOM.render(
+    <ProductsContextProvider>
+        <App />
+    </ProductsContextProvider>,
+    document.getElementById("root")
 )
-
-ReactDOM.render(<App />, document.getElementById("root"))
